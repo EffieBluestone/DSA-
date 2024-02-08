@@ -1,0 +1,52 @@
+// dsa Final 
+
+//#include "dynamic.h"
+#include <iostream>
+#include <fstream>
+#include <string> 
+#include <sstream>
+using namespace std;
+
+int main(){
+    //ask the user to enter the name of file to specify the graph
+    cout << "Please enter the name of the file specifying the graph: ";
+    string inFileName;
+    cin >> inFileName;
+    //open fileName
+    ifstream inFile(inFileName);
+    if(!inFile){
+        cout << "Error: file not found" << endl;
+        return 1;
+    }
+
+    //loop through the file and add edges to the graph
+    string line; // need three lines at a time 
+    while(getline(inFile, line) ){
+        cout << line; 
+        
+        stringstream ss(line);
+        string word1;
+        string word2;
+        string combo;
+
+        getline(ss, from, ' ');
+        getline(ss, to, ' ');
+        getline(ss, weight);
+    }
+
+    string start;
+
+    //get the time
+    auto start_t = chrono::high_resolution_clock::now();
+    // do the code
+    auto end = chrono::high_resolution_clock::now();
+
+    chrono::duration<double> elapsed = end - start_t;
+
+    //ask the user for output file name 
+    
+    cout << "Enter the name of the output file: ";
+    string outFileName;
+    cin >> outFileName;
+    return 0;
+}
